@@ -33,10 +33,10 @@ resource vsphere_virtual_machine "this" {
     template_uuid = data.vsphere_virtual_machine.template.id
   }
 
-  extra_config = {
-    "guestinfo.metadata"          = base64encode(data.template_file.metadata.rendered)
-    "guestinfo.metadata.encoding" = "base64"
-    "guestinfo.userdata"          = base64encode(data.template_file.userdata.rendered)
-    "guestinfo.userdata.encoding" = "base64"
-  }
+  # extra_config = {
+  #   "guestinfo.metadata"          = base64encode(data.template_file.metadata.rendered)
+  #   "guestinfo.metadata.encoding" = "base64"
+  #   "guestinfo.userdata"          = base64encode(data.template_file.userdata.rendered)
+  #   "guestinfo.userdata.encoding" = "base64"
+  # }
 }
